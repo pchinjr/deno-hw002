@@ -1,17 +1,18 @@
 // TODO: modify the body object!
 
-import { bar } from './bar.ts'
+import { bar } from "./bar.ts";
 
-export async function handler (req: object) {
-  
-  const env = Deno.env.toObject()
+export async function handler(req: object) {
+  const env = Deno.env.toObject();
 
-  let data = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${env.NASA_KEY}`)
-    .then(response => response.json())
-  
-    console.log(data.url)
+  let data = await fetch(
+    `https://api.nasa.gov/planetary/apod?api_key=OPFvLet3v9eZd9GX3GBCFWubNXtKe0odBbfBf9Ce`,
+  )
+    .then((response) => response.json());
 
-    console.log(bar())
+  console.log(data.url);
+
+  console.log(bar());
 
   let body = `
 <!doctype html>
@@ -35,17 +36,17 @@ export async function handler (req: object) {
 
   </body>
 </html>
-`
-  
-  
+`;
+
   return {
     statusCode: 200,
     headers: {
-      'content-type': 'text/html; charset=utf8',
-      'cache-control': 'no-cache, no-store, must-revalidate, max-age=0, s-maxage=0'
+      "content-type": "text/html; charset=utf8",
+      "cache-control":
+        "no-cache, no-store, must-revalidate, max-age=0, s-maxage=0",
     },
-    body
-  }
+    body,
+  };
 }
 
 // Example responses

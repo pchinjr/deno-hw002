@@ -1,3 +1,3 @@
 export function bar() {
-  return 'praise cage'
+  return "praise cage";
 }
