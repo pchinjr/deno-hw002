@@ -3,6 +3,8 @@
   "version": "0.0.0",
   "description": "Begin basic Hello World! app for Deno",
   "scripts": {
+    "test": "deno test src",
+    "lint": "deno fmt src",
     "start": "run-s cross-env",
     "cross-env": "cross-env NODE_ENV=testing sandbox"
   },
