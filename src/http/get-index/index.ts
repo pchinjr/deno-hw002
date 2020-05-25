@@ -6,9 +6,11 @@ export async function handler(req: object) {
   const env = Deno.env.toObject();
 
   let data = await fetch(
-    `https://api.nasa.gov/planetary/apod?api_key=OPFvLet3v9eZd9GX3GBCFWubNXtKe0odBbfBf9Ce`,
+    `https://api.nasa.gov/planetary/apod?api_key=${env.NASA_KEY}`,
   )
     .then((response) => response.json());
+
+  console.log(env.NASA_KEY)
 
   console.log(data.url);
 
