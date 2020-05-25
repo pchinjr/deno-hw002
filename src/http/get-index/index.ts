@@ -1,6 +1,6 @@
 // TODO: modify the body object!
 
-import { bar } from '../../bar.ts'
+import { bar } from './bar.ts'
 
 export async function handler (req: object) {
   
